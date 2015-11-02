@@ -1,0 +1,27 @@
+xMin=4;
+xMax=-4;
+yMin=-5;
+yMax=5;
+h1=ezplot('y=abs(mod(1*x,4)-2)-1',[xMin xMax yMin yMax]);
+hold on;
+h2=ezplot('y=abs(mod(2*x,4)-2)-1',[xMin xMax yMin yMax]);
+h3=ezplot('y=abs(mod(4*x,4)-2)-1',[xMin xMax yMin yMax]);
+hold off;
+legend('alpha=1','alpha=2','alpha=4');
+title('Comparison of alpha');
+set(h1,'color','r');
+set(h2,'color','g');
+set(h3,'color','b');
+ylabel('y=abs(mod(alpha*x,4)-2)-1');
+
+figure;
+h1=ezplot('y=sign(abs(mod(1*x,4)-2)-1)',[xMin xMax yMin yMax]);
+hold on;
+h2=ezplot('y=sign(abs(mod(2*x,4)-2)-1)',[xMin xMax yMin yMax]);
+h3=ezplot('y=sign(abs(mod(4*x,4)-2)-1)',[xMin xMax yMin yMax]);
+legend('alpha=1','alpha=2','alpha=4');
+title('Comparison of alpha');
+set(h1,'color','r');
+set(h2,'color','g');
+set(h3,'color','b');
+ylabel('y=sign(abs(mod(alpha*x,4)-2)-1)');
